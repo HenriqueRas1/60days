@@ -4,9 +4,27 @@ let atual = 0;
 let passado = [];
 let futuro = [];
 
-const valorE1 = document.getElementById("valor");
+const valor = document.getElementById("valor");
 function render() {
-  valorE1.textContent = atual;
+  valor.textContent = atual;
 }
+
+const botaoMais = document.getElementById("mais");
+
+botaoMais.addEventListener("click", function () {
+  passado.push(atual);
+  atual = atual + 1;
+  futuro = [];
+  render();
+});
+
+const botaoMenos = document.getElementById("menos");
+
+botaoMenos.addEventListener("click", function () {
+  passado.push(atual);
+  atual = atual - 1;
+  futuro = [];
+  render();
+});
 
 render();
